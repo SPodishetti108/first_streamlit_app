@@ -33,9 +33,9 @@ st.table(data)
 plt.plot([1, 2, 3, 4])
 st.pyplot(plt)
 
-button_clicked = st.button("Click Me")
-if button_clicked:
-    st.write("Button was clicked!")
+#button_clicked = st.button("Click Me")
+#if button_clicked:
+#    st.write("Button was clicked!")
 
 
 #print("Gam Ganesha")
