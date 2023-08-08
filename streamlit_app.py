@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 st.title('My Parents New Healthy Diner')
 
@@ -19,6 +20,9 @@ st.text("This is some text.")
 st.markdown("## This is a Markdown Heading")
 st.markdown("This is **bold** and *italic* text.")
 
+
+data = pd.DataFrame({"Name": ["Alice", "Bob", "Charlie"], "Age": [25, 30, 28]})
+st.dataframe(data)
 
 
 
