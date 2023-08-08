@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 st.title('My Parents New Healthy Diner')
 
@@ -30,12 +30,12 @@ st.dataframe(data)
 st.text("This is pandas table display")
 st.table(data)
 
-plt.plot([1, 2, 3, 4])
-st.pyplot(plt)
+#plt.plot([1, 2, 3, 4])
+#st.pyplot(plt)
 
-#button_clicked = st.button("Click Me")
-#if button_clicked:
-#    st.write("Button was clicked!")
+button_clicked = st.button("Click Me")
+if button_clicked:
+    st.write("Button was clicked!")
 
 
 #print("Gam Ganesha")
