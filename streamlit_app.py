@@ -4,6 +4,14 @@ import pandas as pd
 
 st.title('My Parents New Healthy Diner')
 
+streamlit.header('Breakfast Menu')
+streamlit.text('Omega 3 & Blueberry Oatmeal')
+streamlit.text('Kale, Spinach & Rocket Smoothie')
+streamlit.text('Hard-Boiled Free-Range Egg')
+
+"""
+
+
 st.header('Breakfast Menu')
 st.subheader("South Indian : ")
 st.text('idli \n Dosa \n Wada \n  :)')
@@ -39,3 +47,5 @@ if button_clicked:
 
 
 #print("Gam Ganesha")
+
+"""
