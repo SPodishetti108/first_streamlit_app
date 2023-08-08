@@ -1,1 +1,1 @@
-
+print("Gam Ganesha")
