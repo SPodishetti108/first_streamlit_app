@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 #import matplotlib.pyplot as plt
-import requests req
+import requests as req
 
 st.title('My Mom''s New Healthy Diner')
 st.header('Breakfast Menu')
