@@ -1,7 +1,14 @@
 import streamlit as st
 import pandas as pd
 #import matplotlib.pyplot as plt
+import request req
 
+st.title('My Mom''s New Healthy Diner')
+st.header('Breakfast Menu')
+fruityvice_responce = req.get("https://fruityvice.com/api/fruit/watermelon")
+st.text(fruityvice_responce)
+
+'''
 st.title('My Parents New Healthy Diner')
 
 st.header('Breakfast Menu')
@@ -21,3 +28,4 @@ fruits_to_show  = my_fruit_list.loc[fruits_selected]
 # Display the table on the page.
 #st.dataframe(my_fruit_list)
 st.dataframe(fruits_to_show)
+'''
