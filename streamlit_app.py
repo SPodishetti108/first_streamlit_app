@@ -32,5 +32,5 @@ st.text(fruityvice_response.json())
 # print user selection on streamlit, with pandas table format.
 fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 # write your own comment - what does this do?
-st.text(fruityvice_normalized)
+#st.text(fruityvice_normalized)
 st.dataframe(fruityvice_normalized)
