@@ -6,6 +6,6 @@ import requests
 
 st.title('My Mom''s New Healthy Diner')
 st.header('Breakfast Menu')
-import requests
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+#import requests
+fruityvice_response = requests.get('https://fruityvice.com/api/fruit/watermelon')
 st.text(fruityvice_response)
