@@ -2,8 +2,6 @@ import streamlit as st
 import pandas as pd
 #import matplotlib.pyplot as plt
 import requests 
-import snowflake.connector
-
 #st.title('My Parents New Healthy Diner')
 st.title('My Mom\'s New Healthy Diner')
 st.header('Breakfast Favorites')
@@ -40,3 +38,5 @@ fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 # write your own comment - what does this do?
 #st.text(fruityvice_normalized)
 st.dataframe(fruityvice_normalized) 
+
+import snowflake.connector
