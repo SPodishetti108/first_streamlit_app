@@ -1,8 +1,11 @@
 import streamlit as st
-import pandas as pd
+#import pandas as pd
 #import matplotlib.pyplot as plt
-import requests
+#import requests
 import snowflake.connector
+from urllib.error import URLError
+
+
 #st.title('My Parents New Healthy Diner')
 st.title('My Mom\'s New Healthy Diner')
 st.header('Breakfast Favorites')
@@ -39,6 +42,11 @@ fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 # write your own comment - what does this do?
 #st.text(fruityvice_normalized)
 st.dataframe(fruityvice_normalized) 
+
+#Dont run anything past here while we troubleshoot.
+st.stop()
+
+import snowflake.connector
 
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 my_cur = my_cnx.cursor()
