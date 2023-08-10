@@ -46,8 +46,9 @@ my_cur = my_cnx.cursor()
 my_cur.execute("SELECT * from fruit_load_list")
 my_data_row = my_cur.fetchone()
 #st.text("Hello from Snowflake:")
-st.text("The Fruit load list contains:")
-st.text(my_data_row)
+#st.text("The Fruit load list contains:")
+st.header("The Fruit load list contains:")
+st.dataframe(my_data_row)
 
 
 
