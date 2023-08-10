@@ -1,7 +1,7 @@
 import streamlit as st
-#import pandas as pd
+import pandas as pd
 #import matplotlib.pyplot as plt
-#import requests
+import requests
 import snowflake.connector
 from urllib.error import URLError
 
@@ -46,7 +46,7 @@ st.dataframe(fruityvice_normalized)
 #Dont run anything past here while we troubleshoot.
 st.stop()
 
-import snowflake.connector
+#import snowflake.connector
 
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 my_cur = my_cnx.cursor()
