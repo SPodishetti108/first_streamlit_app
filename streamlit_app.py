@@ -26,7 +26,15 @@ fruits_to_show  = my_fruit_list.loc[fruits_selected]
 #st.dataframe(my_fruit_list)
 st.dataframe(fruits_to_show)
 #st.title('My Mom\'s New Healthy Diner')
-
+############################################################################################
+def get_fruityvice_data(this_fruit_choice):
+  fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + this_fruit_choice)
+  fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
+  # write your own comment - what does this do?
+  return fruityvice_normalized
+############################################################################################
+#New sectin to disply fruityvice api respomnce
+#st.dataframe(fruityvice_normalized) 
 st.header('Fruityvice Fruit Advice!')
 #import requests
 #fruityvice_response = requests.get("https://fruityvice.com/api/fruit/Watermelon")
@@ -37,13 +45,15 @@ try:
   if not fruit_choice:
       st.error("Please select a fruit to get information.")
   else: 
-        st.write('The user entered ', fruit_choice)
-        fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
+        #st.write('The user entered ', fruit_choice)
+        back_from_function = get_fruityvice_data(fruit_choice)
+        #fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
         # print user selection on streamlit, with pandas table format.
-        fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
+        #fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
         # write your own comment - what does this do?
         #st.text(fruityvice_normalized)
-        st.dataframe(fruityvice_normalized) 
+        #st.dataframe(fruityvice_normalized) 
+        st.dataframe(back_from_function) 
 except URLError as e:
     streamlit.error()
 
