@@ -58,7 +58,7 @@ except URLError as e:
     streamlit.error()
 
 #Dont run anything past here while we troubleshoot.
-st.stop()
+#st.stop()
 
 #import snowflake.connector
 
@@ -70,8 +70,19 @@ my_data_rows = my_cur.fetchall()
 #st.text("Hello from Snowflake:")
 #st.text("The Fruit load list contains:")
 st.header("The Fruit load list contains:")
-st.dataframe(my_data_rows)
-
+#Snowflake-related functions
+################################################################
+def get_fruit_load_list():
+  with my_cnx.cursor() as my_cur:
+    my_cur.execute("Select * from fruit_load_list")
+    return my_cur.fetchall()
+################################################################
+# Add a button to load the fruit
+if st.button('Get fruit load list'):
+  my_cnx = snowflake.connector.connect(**st.sercrets["snowflake"])
+  my_data_rows = get_fruit_load_list()
+  st.dataframe(my_data_rows)
+st.stop()
 fruit_choice = st.text_input('What fruit would you like to add?')
 st.write('Thanks for adding ', fruit_choice)
 #fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
